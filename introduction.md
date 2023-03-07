@@ -2,6 +2,8 @@
 
 #### By: Ayesha Patel, Fal Iyoab, Gillian Soekawan, Jackie Hong, and Megan Cuan
 
+![image of U.S. cash]("https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+
 ## Introduction
 Wealth is a vital determinant in the health, success, and security of one’s life. With greater wealth, not only does one have daily access to basic human necessities but also better healthcare benefits and reassurance of a sufficient income leading to longevity and tranquility. Yet, despite the great significance wealth has on the quality of life, there are large inconsistencies in the global [wealth distribution](https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html). From all of the wealth created since 2020, the richest 1% in the world own 67% of this new wealth (Kiderlin). Concerned with the unequal distribution of wealth, we wanted to analyze trends in the individuals who have the highest net worth globally in order to understand if this top-tier socioeconomic status is limited to specific characteristics or if it is a status that can be achieved by people from all backgrounds.
 
