@@ -1,11 +1,16 @@
 #load libraries
-library(dplyr)
-library(ggplot2)
+library(plotly)
+library(bslib)
 library(stringr)
+library(dplyr)
+library(tidyverse)
+library(openintro)
+library(ggplot2)
+library(shiny)
 library(markdown)
 
 
-
+# PAGE ONE - INTRODUCTION
 intro_tab <- tabPanel(
   # Title of tab
   "Introduction",
@@ -16,13 +21,9 @@ intro_tab <- tabPanel(
   )
 )
 
-conclusion_tab <- tabPanel(
-  "Conclusion",
-  fluidPage(
-    includeMarkdown()
-  )
-)
 
+
+# PAGE TWO - CHART 1
 chart_1_plot <- mainPanel(
   # Make plot interactive
   plotlyOutput(outputId = "chart1")
@@ -39,6 +40,7 @@ chart_1_tab <- tabPanel(
   )
 )
 
+# PAGE THREE - CHART 2
 chart_2_plot <- mainPanel(
   # Make plot interactive
   plotlyOutput(outputId = "chart2")
@@ -54,6 +56,9 @@ chart_2_tab <- tabPanel(
     chart_2_plot
   )
 )
+
+
+# PAGE FOUR - CHART 3
 chart_3_plot <- mainPanel(
   # Make plot interactive
   plotlyOutput(outputId = "chart3")
@@ -70,6 +75,16 @@ chart_3_tab <- tabPanel(
   )
 )
 
+
+# PAGE 5 - CONCLUSION PAGE
+conclusion_tab <- tabPanel(
+  "Conclusion",
+  fluidPage(
+    includeMarkdown()
+  )
+)
+
+# COMPILE PAGE 1-5
 ui <- navbarPage(
   # Select Theme
   theme = shinytheme("flatly"),
