@@ -12,15 +12,14 @@ library(markdown)
 
 # PAGE ONE - INTRODUCTION
 intro_tab <- tabPanel(
-  # Title of tab
   "Introduction",
-  fluidPage(
-    # Include a Markdown file!
-    includeMarkdown("introduction.md")
-  )
-)
+  sidebarPanel(
+    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg", width = 400, height = 300),
+    img(src = "https://images.unsplash.com/photo-1659019730080-eb6adcdd996c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80", width = 400, height = 300)),
+  mainPanel(
+    includeMarkdown("introduction.md")))
 
-
+      
 # PAGE TWO - CHART 1
 chart_1 <- mainPanel(
   # Make plot interactive
