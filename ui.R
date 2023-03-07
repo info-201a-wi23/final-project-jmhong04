@@ -8,14 +8,23 @@ library(openintro)
 library(ggplot2)
 library(shiny)
 library(markdown)
+library(shinythemes)
 
-
+# Theme
+# my_theme <- bs_theme(bg = "black", #background
+                     # fg = "white", #foreground color
+                    #  primary = "#FCC780") # primary color
+                     
+                     
 # PAGE ONE - INTRODUCTION
 intro_tab <- tabPanel(
   "Introduction",
   sidebarPanel(
-    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg", width = 400, height = 300),
-    img(src = "https://images.unsplash.com/photo-1659019730080-eb6adcdd996c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80", width = 400, height = 300)),
+    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 300),
+    p(""),
+    img(src = "https://images.unsplash.com/photo-1659019730080-eb6adcdd996c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80", width = 400, height = 250),
+    p(""),
+    img(src = "https://images.pexels.com/photos/6252325/pexels-photo-6252325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 250)),
   mainPanel(
     includeMarkdown("introduction.md")))
 
@@ -92,7 +101,7 @@ conclusion_tab <- tabPanel(
 # COMPILE PAGE 1-5
 ui <- navbarPage(
   # Select Theme
-  #theme = shinytheme("flatly"),
+ #  theme = my_theme,
   # Home page title
   "Home Page",
   intro_tab,
