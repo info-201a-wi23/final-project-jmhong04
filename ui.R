@@ -11,10 +11,7 @@ library(markdown)
 library(shinythemes)
 
 # Theme
-# my_theme <- bs_theme(bg = "black", #background
-                     # fg = "white", #foreground color
-                    #  primary = "#FCC780") # primary color
-                     
+my_theme <- bs_theme(version = 3, bootswatch = "sandstone")
                      
 # PAGE ONE - INTRODUCTION
 intro_tab <- tabPanel(
@@ -24,9 +21,11 @@ intro_tab <- tabPanel(
     p(""),
     img(src = "https://images.unsplash.com/photo-1659019730080-eb6adcdd996c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80", width = 400, height = 250),
     p(""),
-    img(src = "https://images.pexels.com/photos/6252325/pexels-photo-6252325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 250)),
+    img(src = "https://images.pexels.com/photos/6252325/pexels-photo-6252325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 250),
+    width = 4),
   mainPanel(
-    includeMarkdown("introduction.md")))
+    includeMarkdown("introduction.md"),
+    width = 8))
 
       
 # PAGE TWO - CHART 1
@@ -56,8 +55,9 @@ chart_1_tab <- tabPanel(
     sidebarPanel(
       age_slider_widget,
       gender_checkbox_widget),
-    chart_1
-  )
+    chart_1),
+    h3("Description"),
+    p("The purpose of this scatterplot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our question about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend. The slider and checkbox widget allows the user to view the trends of a smaller age range or specific gender more closely.")
 )
 
 # PAGE THREE - CHART 2
@@ -70,8 +70,9 @@ chart_2_tab <- tabPanel(
   "Data Viz 2",
   sidebarLayout(
     sidebarPanel(),
-    chart_2
-  )
+    chart_2),
+  h3("Description"),
+  p("This stacked bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism. The ___ widget allows the user to _____.")
 )
 
 
@@ -85,8 +86,9 @@ chart_3_tab <- tabPanel(
   "Data Viz 3",
   sidebarLayout(
     sidebarPanel(),
-    chart_3
-  )
+    chart_3),
+    h3("Description"),
+    p("These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (and excludes Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions. The ___ widget allows the user to _____.")
 )
 
 
@@ -94,14 +96,13 @@ chart_3_tab <- tabPanel(
 conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
-    #includeMarkdown()
-  )
+    includeMarkdown("conclusion.md"))
 )
 
 # COMPILE PAGE 1-5
 ui <- navbarPage(
   # Select Theme
- #  theme = my_theme,
+  theme = my_theme,
   # Home page title
   "Home Page",
   intro_tab,
