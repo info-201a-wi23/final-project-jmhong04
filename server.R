@@ -65,7 +65,54 @@ server <- function(input, output) {
   })
   
   
-  output$chart_3_plot <- renderPlotly({
+  output$map_plot <- renderPlotly({
     
+    billionaire_amt_state <- billionaire_data %>%
+      filter(country == "United States") %>%
+      group_by(state) %>%
+      summarize(state_number = n())
+    
+    billionaire_amt_country <- billionaire_data %>%
+      group_by(country) %>%
+      summarize(country_number = n())
+    
+    state_shape <- map_data("state")
+    world_shape <- map_data("world")
+    
+    # State Map
+    my_regions <- state_shape$region
+    updated_regions <- str_to_title(my_regions)
+    state_shape <- state_shape %>%
+      mutate(updated_regions)
+    
+    billionaire_shape_state_data <- state_shape %>%
+      left_join(billionaire_amt_state, by = c("updated_regions" = "state"))
+        
+        if (input$color_selection == "Purple") {
+          light <- "#a6a6df"
+            dark <- "#642d8a"
+        } else if (input$color_selection== "Green") {
+          light <- "#d3ffce"
+            dark <- "#297630"
+        } else {
+          light <- "#c6e2ff"
+            dark <- "#000080"
+        }
+        
+        map_plot <- ggplot(data = billionaire_shape_state_data) +
+          geom_polygon(aes(
+            x = long,
+            y = lat,
+            group = group,
+            fill = state_number 
+          )) +
+          scale_fill_gradient(low = light, high = dark) +
+          coord_map() +
+          labs(title = "Billionaires in the US", fill = "Number of Billionaires", x = "Longitude", y = "Latitude")
+        
+        ggplotly(map_plot, tooltip = c("text"))
+        
+        return(map_plot)
   })
 }
+    

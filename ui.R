@@ -112,15 +112,26 @@ chart_2_tab <- tabPanel(
 
 
 # PAGE FOUR - CHART 3
+# Color Widget
+radio_color_widget <- radioButtons(
+  inputId = "color_selection",
+  label = "Select Color",
+  choices = list("Purple", 
+                 "Blue", 
+                 "Green"),
+  selected = "Purple"
+)
+
 chart_3 <- mainPanel(
   # Make plot interactive
-  plotlyOutput(outputId = "chart_3_plot")
+  plotlyOutput(outputId = "map_plot")
 )
 
 chart_3_tab <- tabPanel(
   "Data Viz 3",
   sidebarLayout(
-    sidebarPanel(),
+    sidebarPanel(
+      radio_color_widget),
     chart_3
   ),
   h3("Description"),
