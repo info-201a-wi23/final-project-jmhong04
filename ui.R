@@ -19,13 +19,16 @@ intro_tab <- tabPanel(
   sidebarPanel(
     img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 300),
     p(""),
-    img(src = "https://images.unsplash.com/photo-1659019730080-eb6adcdd996c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80", width = 400, height = 250),
+    img(src = "https://img.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_1284-61966.jpg?w=1060&t=st=1678256947~exp=1678257547~hmac=0be704d1a1d24d3af8f96f365ac5dd28a5454695a2740c8ebf8db86ad548490c", width = 400, height = 220),
     p(""),
-    img(src = "https://images.pexels.com/photos/6252325/pexels-photo-6252325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 250),
+    img(src = "https://img.freepik.com/free-vector/business-inequality-concept-illustration_114360-8764.jpg?w=900&t=st=1678258207~exp=1678258807~hmac=f4c37d72d69287b8521f366600950eceb5fdac1c27a3655bc9d4ce3810a3823c", width = 400, height = 300),
+    p(""),
+    img(src = "https://img.freepik.com/free-vector/inheritance-concept-illustration_114360-12914.jpg?w=740&t=st=1678258111~exp=1678258711~hmac=8ae6b03f97f5f5ec60aaf1115a10bd47088f26fb7e99266dda099bc90491d835", width = 400, height = 400),
     width = 4),
   mainPanel(
     includeMarkdown("introduction.md"),
-    width = 8))
+    width = 8)
+  )
 
       
 # PAGE TWO - CHART 1

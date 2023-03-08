@@ -30,3 +30,14 @@ Secondly, a person is listed as a billionaire only if they were the founder of t
 ## Limitations
 
 After evaluating the dataset, one possible problem might arise due to the inclusion of both international and domestic data. This could cause difficulty in interpreting the results as a combined population because of the known differences between domestic versus international trends. It ultimately led us to our question “How does one’s country of origin (international factor) or state (domestic factor) relate to the chances of achieving a net worth in the billions?” through which we first examine trends in individual countries to identify and reduce the impact of cultural differences. Another possible limitation is the considerable number of “NA” values in the philanthropy score column. The lack of data limits our sample size for identifying trends among those who are charitable. Furthermore, it seems there are more “NA” values for billionaires who are not from the United States, suggesting the dataset is favoring United States billionaires over international ones. Limited data about those from countries other than the United States would cause our conclusions therefore to also favor US billionaires. Another possible limitation is the “self-made” category being represented as binary which may be an oversimplification. It is difficult to ascertain the level of power and influence the individual’s family may have had, leading to limited nuance and applicability of the results. Lastly, there are a few factors that are more informative in elucidating the realities of social mobility such as educational attainment, race, and the family’s relative economic class that Forbes chose not to investigate. If these factors were included in our dataset, the conclusions we would be able to draw about whether social mobility is attainable for the average person may be more specific and detailed.
+
+---
+
+### Citations
+Kiderlin, Sophie. “The Richest 1% of People Amassed Almost Two-Thirds of New Wealth Created In the Last Two Years, Oxfam Says.” CNBC, NBCUniversal News Group, 16 Jan. 2023, https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html.
+
+<a href="https://www.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_16396829.htm#query=wealth%20inequality&position=0&from_view=search&track=ais">Image by macrovector</a> on Freepik
+
+<a href="https://www.freepik.com/free-vector/inheritance-concept-illustration_33756691.htm#query=inherit&position=0&from_view=search&track=sph">Image by storyset</a> on Freepik
+
+<a href="https://www.freepik.com/free-vector/business-inequality-concept-illustration_23849115.htm#query=business%20inequality&position=1&from_view=author">Image by storyset</a> on Freepik
