@@ -34,10 +34,10 @@ After evaluating the dataset, one possible problem might arise due to the inclus
 ---
 
 ### Citations
-Kiderlin, Sophie. “The Richest 1% of People Amassed Almost Two-Thirds of New Wealth Created In the Last Two Years, Oxfam Says.” CNBC, NBCUniversal News Group, 16 Jan. 2023, https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html.
-
 <a href="https://www.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_16396829.htm#query=wealth%20inequality&position=0&from_view=search&track=ais">Image by macrovector</a> on Freepik
 
 <a href="https://www.freepik.com/free-vector/inheritance-concept-illustration_33756691.htm#query=inherit&position=0&from_view=search&track=sph">Image by storyset</a> on Freepik
 
 <a href="https://www.freepik.com/free-vector/business-inequality-concept-illustration_23849115.htm#query=business%20inequality&position=1&from_view=author">Image by storyset</a> on Freepik
+
+Kiderlin, Sophie. “The Richest 1% of People Amassed Almost Two-Thirds of New Wealth Created In the Last Two Years, Oxfam Says.” CNBC, NBCUniversal News Group, 16 Jan. 2023, https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html.
