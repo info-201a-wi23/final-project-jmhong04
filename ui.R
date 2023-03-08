@@ -124,7 +124,9 @@ radio_color_widget <- radioButtons(
 
 chart_3 <- mainPanel(
   # Make plot interactive
-  plotlyOutput(outputId = "map_plot")
+  plotlyOutput(outputId = "state_map_plot"),
+  print(" "),
+  plotlyOutput(outputId = "world_map_plot")
 )
 
 chart_3_tab <- tabPanel(
