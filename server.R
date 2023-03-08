@@ -8,8 +8,10 @@ library(ggplot2)
 library(shiny)
 library(markdown)
 
-
+#Load Dataframe
 all_data <- read.csv("final_dataframe.csv", stringsAsFactors = FALSE)
+all_data$selfMade[str_detect(all_data$selfMade, "True")] <- "Self Made"
+all_data$selfMade[str_detect(all_data$selfMade, "False")] <- "Not Self Made"
 
 server <- function(input, output) {
   
@@ -44,7 +46,21 @@ server <- function(input, output) {
   })
   
   
-  output$chart_2_plot <- renderPlotly({
+    output$chart_2_plot <- renderPlotly({
+      
+      selfMade_data <- all_data %>%
+        filter(selfMade == input$source_selection) %>%
+        filter(philanthropyScore >= input$philanthropyScore_range[1] & philanthropyScore <= input$philanthropyScore_range[2])
+      
+      chart_2_plot <- 
+        ggplot(selfMade_data, aes(x = philanthropyScore, fill = selfMade)) +
+        geom_histogram(position = "stack", binwidth = 0.5, show.legend = FALSE) +
+        labs(x = "Philanthropy Score",
+             y = "Number of Billionaires",
+             fill = "Source of Wealth",
+             title = paste0("Philanthropy Score vs. Billionaires Who Are ", input$source_selection)) + 
+        scale_fill_discrete() 
+      return(chart_2_plot)
     
   })
   

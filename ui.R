@@ -75,19 +75,39 @@ chart_1_tab <- tabPanel(
 )
 
 # PAGE THREE - CHART 2
+# Widget 1: Selecting Source of Wealth/Privilege
+wealth_radio_widget <- radioButtons(
+  inputId = "source_selection",
+  label = "Select Source of Wealth",
+  choices = c("Self Made", "Not Self Made"),
+  #choices = unique(selfMade_data$selfMade),
+  selected = "Self Made")
+
+# Widget 2: Selecting Philanthropy Score Range
+phil_score_slider_widget <- sliderInput(
+  inputId = "philanthropyScore_range",
+  label = "Select Philanthropy Score Range:",
+  min = 1,
+  max = 5,
+  value = c(1, 5),
+  sep = "")
+
+# Data Visualization / Plot
 chart_2 <- mainPanel(
-  # Make plot interactive
   plotlyOutput(outputId = "chart_2_plot")
 )
 
 chart_2_tab <- tabPanel(
   "Data Viz 2",
+  titlePanel(strong("Data Visualization 2")),
   sidebarLayout(
-    sidebarPanel(),
+    sidebarPanel(
+      wealth_radio_widget,
+      phil_score_slider_widget),
     chart_2
   ),
   h3("Description"),
-  p("This stacked bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism. The ___ widget allows the user to _____.")
+  p("This stacked bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism. The slider and radio button widget allows the user to compare self-made billionaires' philanthropy scores with that of their non-self-made billionaire counterparts' visually. The user can make conclusions regarding the correlation between a billionaire's financial upbringing (their level of wealth and privilege growing up), and their charitability.")
 )
 
 
