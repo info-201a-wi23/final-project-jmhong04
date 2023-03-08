@@ -104,7 +104,7 @@ ui <- navbarPage(
   # Select Theme
   theme = my_theme,
   # Home page title
-  "Home Page",
+  "2022 Billionaires",
   intro_tab,
   chart_1_tab,
   chart_2_tab,
