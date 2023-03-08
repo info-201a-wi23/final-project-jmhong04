@@ -28,12 +28,13 @@ server <- function(input, output) {
     
     chart_1_plot <- ggplot(data = chart_world_data) +
       # geom_line(mapping = aes(x = age, 
-      #                         y = finalWorth, 
-      #                         color = gender)) +
+      #                          y = finalWorth, 
+      #                          color = gender)) +
       geom_point(aes(x = age,
                      y = finalWorth, 
                     color = gender,
-                    text = paste("Age:", age, "<br>Final Worth:", finalWorth, "<br>Gender:", gender))) +
+                    text = paste("Age:", age, "<br>Final Worth:", finalWorth, "<br>Gender:", gender)),
+                 position = position_jitter(width = 0.5, height = 3.5)) +
                    scale_x_continuous(breaks = seq(20, 100, 5)) +
                    scale_y_continuous(breaks = seq(0, 220, 25)) +
                    labs(title = "Distribution of Age vs Net Worth by Gender", x = "Age", y = "Net Worth (in billions)", color = "Gender") +
