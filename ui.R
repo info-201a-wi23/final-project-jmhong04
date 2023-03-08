@@ -1,4 +1,4 @@
-#load libraries
+# load libraries
 library(plotly)
 library(bslib)
 library(stringr)
@@ -11,26 +11,34 @@ library(markdown)
 library(shinythemes)
 
 # Theme
-my_theme <- bs_theme(version = 3, bootswatch = "sandstone")
-                     
+my_theme <- bs_theme(
+  version = 3,
+  bootswatch = "journal",
+  bg = "#ebe7d5",
+  fg = "#000000",
+  primary = "#558f5d",
+)
+
 # PAGE ONE - INTRODUCTION
 intro_tab <- tabPanel(
   "Introduction",
   sidebarPanel(
-    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 400, height = 300),
+    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 393, height = 293),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_1284-61966.jpg?w=1060&t=st=1678256947~exp=1678257547~hmac=0be704d1a1d24d3af8f96f365ac5dd28a5454695a2740c8ebf8db86ad548490c", width = 400, height = 220),
+    img(src = "https://img.freepik.com/free-vector/inheritance-concept-illustration_114360-12914.jpg?w=740&t=st=1678258111~exp=1678258711~hmac=8ae6b03f97f5f5ec60aaf1115a10bd47088f26fb7e99266dda099bc90491d835", width = 393, height = 373),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/business-inequality-concept-illustration_114360-8764.jpg?w=900&t=st=1678258207~exp=1678258807~hmac=f4c37d72d69287b8521f366600950eceb5fdac1c27a3655bc9d4ce3810a3823c", width = 400, height = 300),
+    img(src = "https://img.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_1284-61966.jpg?w=1060&t=st=1678256947~exp=1678257547~hmac=0be704d1a1d24d3af8f96f365ac5dd28a5454695a2740c8ebf8db86ad548490c", width = 393, height = 220),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/inheritance-concept-illustration_114360-12914.jpg?w=740&t=st=1678258111~exp=1678258711~hmac=8ae6b03f97f5f5ec60aaf1115a10bd47088f26fb7e99266dda099bc90491d835", width = 400, height = 400),
-    width = 4),
+    img(src = "https://img.freepik.com/free-vector/business-inequality-concept-illustration_114360-8764.jpg?w=900&t=st=1678258207~exp=1678258807~hmac=f4c37d72d69287b8521f366600950eceb5fdac1c27a3655bc9d4ce3810a3823c", width = 393, height = 270),
+    width = 4
+  ),
   mainPanel(
     includeMarkdown("introduction.md"),
-    width = 8)
+    width = 8
   )
+)
 
-      
+
 # PAGE TWO - CHART 1
 chart_1 <- mainPanel(
   # Make plot interactive
@@ -43,7 +51,8 @@ age_slider_widget <- sliderInput(
   min = 19,
   max = 100,
   value = c(20, 60),
-  sep = "")
+  sep = ""
+)
 
 gender_checkbox_widget <- checkboxGroupInput(
   inputId = "gender_selection",
@@ -57,10 +66,12 @@ chart_1_tab <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       age_slider_widget,
-      gender_checkbox_widget),
-    chart_1),
-    h3("Description"),
-    p("The purpose of this scatterplot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our question about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend. The slider and checkbox widget allows the user to view the trends of a smaller age range or specific gender more closely.")
+      gender_checkbox_widget
+    ),
+    chart_1
+  ),
+  h3("Description"),
+  p("The purpose of this scatterplot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our question about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend. The slider and checkbox widget allows the user to view the trends of a smaller age range or specific gender more closely.")
 )
 
 # PAGE THREE - CHART 2
@@ -73,7 +84,8 @@ chart_2_tab <- tabPanel(
   "Data Viz 2",
   sidebarLayout(
     sidebarPanel(),
-    chart_2),
+    chart_2
+  ),
   h3("Description"),
   p("This stacked bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism. The ___ widget allows the user to _____.")
 )
@@ -89,9 +101,10 @@ chart_3_tab <- tabPanel(
   "Data Viz 3",
   sidebarLayout(
     sidebarPanel(),
-    chart_3),
-    h3("Description"),
-    p("These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (and excludes Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions. The ___ widget allows the user to _____.")
+    chart_3
+  ),
+  h3("Description"),
+  p("These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (and excludes Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions. The ___ widget allows the user to _____.")
 )
 
 
@@ -99,7 +112,8 @@ chart_3_tab <- tabPanel(
 conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
-    includeMarkdown("conclusion.md"))
+    includeMarkdown("conclusion.md")
+  )
 )
 
 # COMPILE PAGE 1-5
