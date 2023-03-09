@@ -9,6 +9,7 @@ library(shiny)
 library(markdown)
 
 #Load Dataframe
+#TEST CODE
 all_data <- read.csv("final_dataframe.csv", stringsAsFactors = FALSE)
 all_data$selfMade[str_detect(all_data$selfMade, "True")] <- "Self Made"
 all_data$selfMade[str_detect(all_data$selfMade, "False")] <- "Not Self Made"
