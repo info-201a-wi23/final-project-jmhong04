@@ -16,7 +16,7 @@ my_theme <- bs_theme(
   bootswatch = "journal",
   bg = "#ebe7d5",
   fg = "#000000",
-  primary = "#558f5d",
+  primary = "#558f5d"
 )
 
 # PAGE ONE - INTRODUCTION
@@ -71,7 +71,7 @@ chart_1_tab <- tabPanel(
     chart_1
   ),
   h3("Description"),
-  p("The purpose of this scatterplot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our question about the extent to which age and gender have an effect on one's ability to acquire wealth. The scatter plot aspect of the visualization emphasizes outliers and shows the general trend. The slider and checkbox widget allows the user to view the trends of a smaller age range or specific gender more closely.")
+  p("The purpose of this scatterplot is to show the net worth for women and men across different ages. It highlights whether age is in fact, correlated with net worth and whether this trend differs between men and women. It seeks to answer our question about the extent to which age and gender have an effect on one's ability to acquire wealth and whether there sare inequalities within these groups (research question #1). The scatterplot aspect of the visualization emphasizes outliers and shows the general trend. The slider and checkbox widget allows the user to view the trends of a smaller age range or specific gender more closely. The interactivity of the plot also allows the user to view the data points that are clustered towards the bottom of the graph.")
 )
 
 # PAGE THREE - CHART 2
@@ -107,7 +107,7 @@ chart_2_tab <- tabPanel(
     chart_2
   ),
   h3("Description"),
-  p("This stacked bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism. The slider and radio button widget allows the user to compare self-made billionaires' philanthropy scores with that of their non-self-made billionaire counterparts' visually. The user can make conclusions regarding the correlation between a billionaire's financial upbringing (their level of wealth and privilege growing up), and their charitability.")
+  p("This bar chart aims to demonstrate the correlation between billionaires’ source of wealth and privilege, specifically whether or not they are self-made, and their philanthropy score. The philanthropy scores were determined by the value of a billionaire’s donations throughout their life in ratio to the sum of their total donations and net worth. From a scale of 1 to 5, 1 is the least charitable while 5 is the most charitable. This graph helps us answer our question regarding whether an individual’s background (their level of privilege throughout their upbringing), or their individual journey in acquiring their wealth has an effect on their generosity and altruism (research question #2). The slider and radio button widget allows the user to compare self-made billionaires' philanthropy scores with that of their non-self-made billionaire counterparts' visually. The user can make conclusions regarding the correlation between a billionaire's financial upbringing (their level of wealth and privilege growing up), and their charitability.")
 )
 
 
@@ -137,7 +137,7 @@ chart_3_tab <- tabPanel(
     chart_3
   ),
   h3("Description"),
-  p("These density maps are color-coded to represent the density of a particular variable across a given area. In the case of a density map of billionaires, the map uses color gradients to show where the highest concentrations of billionaires are located. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (and excludes Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions. The ___ widget allows the user to _____.")
+  p("These density maps use color gradients to show where the highest concentrations of billionaire are located domestically and globally. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (excluding Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions (research question #3). Because the adjacent states with a similar number of billionaires can be hard to distinguish, the color selection widget allows the user to change the contrast between these states' colors. The interactivity of the plot is espescially helpful in the global map as it allows the user to view the distribution of billionaires in smaller regions.")
 )
 
 

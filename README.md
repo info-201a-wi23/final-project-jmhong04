@@ -50,6 +50,7 @@ After evaluating the dataset, one possible problem might arise due to the inclus
 <a href="https://www.freepik.com/free-vector/business-inequality-concept-illustration_23849115.htm#query=business%20inequality&position=1&from_view=author">Image by storyset</a> on Freepik
 
 Kiderlin, Sophie. “The Richest 1% of People Amassed Almost Two-Thirds of New Wealth Created In the Last Two Years, Oxfam Says.” CNBC, NBCUniversal News Group, 16 Jan. 2023, https://www.cnbc.com/2023/01/16/richest-1percent-amassed-almost-two-thirds-of-new-wealth-created-since-2020-oxfam.html.
+
 ---
 
 # Conclusion / Summary Takeaways
