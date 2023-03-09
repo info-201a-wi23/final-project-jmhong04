@@ -36,8 +36,8 @@ server <- function(input, output) {
       geom_point(aes(x = age,
                      y = finalWorth, 
                     color = gender,
-                    text = paste("Age:", age, "<br>Final Worth:", finalWorth, "<br>Gender:", gender)),
-                 position = position_jitter(width = 0.5, height = 3.5)) +
+                    text = paste("Age:", age, "<br>Final Worth:", finalWorth, "<br>Gender:", gender)), 
+                 position = position_jitter(width = 1.5, height = max(0, min (chart_world_data$finalWorth/2)))) +
                    scale_x_continuous(breaks = seq(20, 100, 5)) +
                    scale_y_continuous(breaks = seq(0, 220, 25)) +
                    labs(title = "Distribution of Age vs Net Worth by Gender", x = "Age", y = "Net Worth (in billions of dollars)", color = "Gender") +
@@ -89,14 +89,14 @@ server <- function(input, output) {
       replace_na(list(Billionaires = 0))
         
         if (input$color_selection == "Purple") {
-          light <- "#a6a6df"
-            dark <- "#642d8a"
+          light <- "#d9d2e9"
+            dark <- "#36006a"
         } else if (input$color_selection== "Yellow") {
           light <- "#ffff9d"
             dark <- "#FFBF00"
         } else {
           light <- "#c6e2ff"
-            dark <- "#0025C8"
+            dark <- "#002373"
         }
         
         map_plot <- ggplot(data = billionaire_shape_state_data) +
@@ -136,14 +136,14 @@ server <- function(input, output) {
       replace_na(list(Billionaires = 0))
     
     if (input$color_selection == "Purple") {
-      light <- "#a6a6df"
-        dark <- "#642d8a"
+      light <- "#d9d2e9"
+        dark <- "#36006a"
     } else if (input$color_selection== "Yellow") {
       light <- "#ffff9d"
         dark <- "#FFBF00"
     } else {
       light <- "#c6e2ff"
-        dark <- "#000080"
+        dark <- "#002373"
     }
     
     world_map <- ggplot(data = billionaire_shape_world_data) +
