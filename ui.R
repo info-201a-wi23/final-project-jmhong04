@@ -101,7 +101,6 @@ chart_2 <- mainPanel(
 
 chart_2_tab <- tabPanel(
   "Privilege and Philanthropy",
-  titlePanel(strong("Data Visualization 2")),
   sidebarLayout(
     sidebarPanel(
       wealth_checkbox_widget,
