@@ -82,8 +82,9 @@ wealth_checkbox_widget <- checkboxGroupInput(
   inputId = "source_selection",
   label = "Select Source of Wealth",
   choices = c("Self Made", "Not Self Made"),
-  #choices = unique(selfMade_data$selfMade),
-  selected = "Self Made")
+  # choices = unique(selfMade_data$selfMade),
+  selected = "Self Made"
+)
 
 # Widget 2: Selecting Philanthropy Score Range
 phil_score_slider_widget <- sliderInput(
@@ -92,7 +93,8 @@ phil_score_slider_widget <- sliderInput(
   min = 1,
   max = 5,
   value = c(1, 5),
-  sep = "")
+  sep = ""
+)
 
 # Data Visualization / Plot
 chart_2 <- mainPanel(
@@ -104,7 +106,8 @@ chart_2_tab <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       wealth_checkbox_widget,
-      phil_score_slider_widget),
+      phil_score_slider_widget
+    ),
     chart_2
   ),
   h3("Description"),
@@ -117,9 +120,11 @@ chart_2_tab <- tabPanel(
 radio_color_widget <- radioButtons(
   inputId = "color_selection",
   label = "Select Color",
-  choices = list("Purple", 
-                 "Blue", 
-                 "Yellow"),
+  choices = list(
+    "Purple",
+    "Blue",
+    "Yellow"
+  ),
   selected = "Purple"
 )
 
@@ -135,7 +140,8 @@ chart_3_tab <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       radio_color_widget,
-      em("The maps may take a few seconds to load.")),
+      em("The maps may take a few seconds to load.")
+    ),
     chart_3
   ),
   h3("Description"),
