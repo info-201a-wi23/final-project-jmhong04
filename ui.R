@@ -9,6 +9,8 @@ library(ggplot2)
 library(shiny)
 library(markdown)
 library(shinythemes)
+library(maps)
+library(mapproj)
 
 # Theme
 my_theme <- bs_theme(
@@ -23,13 +25,13 @@ my_theme <- bs_theme(
 intro_tab <- tabPanel(
   "Introduction",
   sidebarPanel(
-    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = 393, height = 293),
+    img(src = "https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", width = "100%", height = "100%", align="left"),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/inheritance-concept-illustration_114360-12914.jpg?w=740&t=st=1678258111~exp=1678258711~hmac=8ae6b03f97f5f5ec60aaf1115a10bd47088f26fb7e99266dda099bc90491d835", width = 393, height = 373),
+    img(src = "https://img.freepik.com/free-vector/inheritance-concept-illustration_114360-12914.jpg?w=740&t=st=1678258111~exp=1678258711~hmac=8ae6b03f97f5f5ec60aaf1115a10bd47088f26fb7e99266dda099bc90491d835", width = "100%", height = "100%"),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_1284-61966.jpg?w=1060&t=st=1678256947~exp=1678257547~hmac=0be704d1a1d24d3af8f96f365ac5dd28a5454695a2740c8ebf8db86ad548490c", width = 393, height = 220),
+    img(src = "https://img.freepik.com/free-vector/social-justice-money-flat-composition-with-unequal-opportunities-people-with-more-income-less-illustration_1284-61966.jpg?w=1060&t=st=1678256947~exp=1678257547~hmac=0be704d1a1d24d3af8f96f365ac5dd28a5454695a2740c8ebf8db86ad548490c", width = "100%", height = "100%"),
     p(""),
-    img(src = "https://img.freepik.com/free-vector/business-inequality-concept-illustration_114360-8764.jpg?w=900&t=st=1678258207~exp=1678258807~hmac=f4c37d72d69287b8521f366600950eceb5fdac1c27a3655bc9d4ce3810a3823c", width = 393, height = 270),
+    img(src = "https://img.freepik.com/free-vector/business-inequality-concept-illustration_114360-8764.jpg?w=900&t=st=1678258207~exp=1678258807~hmac=f4c37d72d69287b8521f366600950eceb5fdac1c27a3655bc9d4ce3810a3823c", width = "100%", height = "100%"),
     width = 4
   ),
   mainPanel(
@@ -133,12 +135,12 @@ chart_3_tab <- tabPanel(
   "Domestic and Global Distribution",
   sidebarLayout(
     sidebarPanel(
-      radio_color_widget),
+      radio_color_widget,
+      em("The maps may take a few seconds to load.")),
     chart_3
   ),
   h3("Description"),
-  p("These density maps use color gradients to show where the highest concentrations of billionaire are located domestically and globally. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (excluding Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions (research question #3). Because the adjacent states with a similar number of billionaires can be hard to distinguish, the color selection widget allows the user to change the contrast between these states' colors. The interactivity of the plot is espescially helpful in the global map as it allows the user to view the distribution of billionaires in smaller regions."),
-  em("The maps may take a few seconds to load.")
+  p("These density maps use color gradients to show where the highest concentrations of billionaire are located domestically and globally. The world density map of billionaires shows the distribution of billionaires across different regions and countries. This map is helpful in highlighting the countries with the highest number of billionaires. We also used the density map to zoom in on the U.S. and show the distribution of billionaires across the country's various states (excluding Hawaii, Alaska, and U.S. territories). These maps helps answer our question regarding how one’s geographical origin relates to the chances of achieving a net worth in the billions (research question #3). Because the adjacent states with a similar number of billionaires can be hard to distinguish, the color selection widget allows the user to change the contrast between these states' colors. The interactivity of the plot is espescially helpful in the global map as it allows the user to view the distribution of billionaires in smaller regions.")
 )
 
 
