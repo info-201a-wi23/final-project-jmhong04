@@ -78,7 +78,7 @@ chart_1_tab <- tabPanel(
 
 # PAGE THREE - CHART 2
 # Widget 1: Selecting Source of Wealth/Privilege
-wealth_radio_widget <- radioButtons(
+wealth_checkbox_widget <- checkboxGroupInput(
   inputId = "source_selection",
   label = "Select Source of Wealth",
   choices = c("Self Made", "Not Self Made"),
@@ -104,7 +104,7 @@ chart_2_tab <- tabPanel(
   titlePanel(strong("Data Visualization 2")),
   sidebarLayout(
     sidebarPanel(
-      wealth_radio_widget,
+      wealth_checkbox_widget,
       phil_score_slider_widget),
     chart_2
   ),

@@ -54,11 +54,11 @@ server <- function(input, output) {
       
       chart_2_plot <- 
         ggplot(selfMade_data, aes(x = philanthropyScore, fill = selfMade)) +
-        geom_histogram(position = "stack", binwidth = 0.5, show.legend = FALSE) +
+        geom_bar(position = "stack", binwidth = 0.5, show.legend = FALSE) +
         labs(x = "Philanthropy Score",
              y = "Number of Billionaires",
              fill = "Source of Wealth",
-             title = paste0("Philanthropy Score vs. Billionaires Who Are ", input$source_selection)) + 
+             title = paste0("Philanthropy Score vs. Billionaires")) + 
         scale_fill_discrete() 
       return(chart_2_plot)
     
