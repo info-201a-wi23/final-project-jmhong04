@@ -70,7 +70,7 @@ server <- function(input, output) {
     billionaire_amt_state <- all_data %>%
       filter(country == "United States") %>%
       group_by(state) %>%
-      summarize(state_number = n())
+      summarize(Billionaires = n())
     
     # billionaire_amt_state <- billionaire_amt_state %>%
     #   replace_na(list(state_number = "NA"))
@@ -85,17 +85,17 @@ server <- function(input, output) {
     
     billionaire_shape_state_data <- state_shape %>%
       left_join(billionaire_amt_state, by = c("updated_regions" = "state")) %>%
-      replace_na(list(state_number = 0))
+      replace_na(list(Billionaires = 0))
         
         if (input$color_selection == "Purple") {
           light <- "#a6a6df"
             dark <- "#642d8a"
-        } else if (input$color_selection== "Green") {
-          light <- "#d3ffce"
-            dark <- "#297630"
+        } else if (input$color_selection== "Yellow") {
+          light <- "#ffff9d"
+            dark <- "#FFBF00"
         } else {
           light <- "#c6e2ff"
-            dark <- "#000080"
+            dark <- "#0025C8"
         }
         
         map_plot <- ggplot(data = billionaire_shape_state_data) +
@@ -103,10 +103,10 @@ server <- function(input, output) {
             x = long,
             y = lat,
             group = group,
-            color = "black",
-            fill = state_number,
-            text = paste("State:", updated_regions, "<br>Number of Billionaires:", state_number)
-          )) +
+            fill = Billionaires,
+            text = paste("State:", updated_regions)),
+            color = "grey", size = 0.1
+          ) +
           scale_fill_gradient(low = light, 
                               high = dark) +
           coord_map() +
@@ -124,7 +124,7 @@ server <- function(input, output) {
   
     billionaire_amt_country <- all_data %>%
       group_by(country) %>%
-      summarize(country_number = n())
+      summarize(Billionaires = n())
     
     my_countries <- world_shape$region
     updated_countries <- str_replace(my_countries, "USA", "United States")
@@ -132,14 +132,14 @@ server <- function(input, output) {
       mutate(updated_countries)
     billionaire_shape_world_data <- world_shape %>%
       left_join(billionaire_amt_country, by = c("updated_countries" = "country")) %>%
-      replace_na(list(country_number = 0))
+      replace_na(list(Billionaires = 0))
     
     if (input$color_selection == "Purple") {
-      light <- "red"
-        dark <- "yellow"
-    } else if (input$color_selection== "Green") {
-      light <- "#d3ffce"
-        dark <- "#297630"
+      light <- "#a6a6df"
+        dark <- "#642d8a"
+    } else if (input$color_selection== "Yellow") {
+      light <- "#ffff9d"
+        dark <- "#FFBF00"
     } else {
       light <- "#c6e2ff"
         dark <- "#000080"
@@ -150,8 +150,9 @@ server <- function(input, output) {
         x = long,
         y = lat,
         group = group,
-        fill = country_number
-      )) +
+        fill = Billionaires,
+        text = paste("Country:", updated_countries)),
+        color = "grey", size = 0.1) +
       coord_map() +
       scale_fill_gradient(
         low = light,

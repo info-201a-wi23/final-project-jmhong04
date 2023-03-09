@@ -118,7 +118,7 @@ radio_color_widget <- radioButtons(
   label = "Select Color",
   choices = list("Purple", 
                  "Blue", 
-                 "Green"),
+                 "Yellow"),
   selected = "Purple"
 )
 
