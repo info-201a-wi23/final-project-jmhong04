@@ -62,7 +62,7 @@ gender_checkbox_widget <- checkboxGroupInput(
 )
 
 chart_1_tab <- tabPanel(
-  "Data Viz 1",
+  "Age and Gender",
   sidebarLayout(
     sidebarPanel(
       age_slider_widget,
@@ -98,7 +98,7 @@ chart_2 <- mainPanel(
 )
 
 chart_2_tab <- tabPanel(
-  "Data Viz 2",
+  "Privilege and Philanthropy",
   titlePanel(strong("Data Visualization 2")),
   sidebarLayout(
     sidebarPanel(
@@ -130,7 +130,7 @@ chart_3 <- mainPanel(
 )
 
 chart_3_tab <- tabPanel(
-  "Data Viz 3",
+  "Domestic and Global Distribution",
   sidebarLayout(
     sidebarPanel(
       radio_color_widget),

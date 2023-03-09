@@ -30,7 +30,7 @@ The data was collected by Forbes and published on Kaggle. The main editor of the
 
 [Link to source of data (Forbes)](https://www.forbes.com/billionaires/)
 
-## Ethical Questions
+# Ethical Questions
 
 Gender is misrepresented as female and male in this dataset. Forbes misidentified gender as sex by using "female" instead of "women" and "male" instead of "men" to represent the data for gender. Throughout this report, we will denote the `F` and `M` symbol in Forbes' data under the `gender` column as "women" and "men" respectively. The data also treats gender as a binary variable limiting the gender analysis to women and men. 
 
